@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="action-container">
+        <button class="add-car btn btn-primary" (click)="navigateToAddRent()" >Añadir renta</button>
+    </div>
+    <div class="search-bar">
+        <input type="text" [formControl]="searchControl" placeholder="Buscar renta">
+    </div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>id</th>
+                    <th>Marca Coche</th>
+                    <th>Modelo Coche</th>
+                    <th>E-mail Cliente</th>
+                    <th>Fecha Inicio</th>
+                    <th>Fecha Final</th>
+                    <th>Precio</th>
+                    <th>Estado</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (rent of (filteredRents.length > 0 ? filteredRents : rents); track rent._id){
+                <tr>
+                    <td>{{ rent._id }}</td>
+                    <td>{{ rent.car.make }}</td>
+                    <td>{{ rent.car.model }}</td>
+                    <td>{{ rent.user.email || "No Email"}}</td>
+                    <td>{{ rent.dateIn }}</td>
+                    <td>{{ rent.dateOut }}</td>
+                    <td>{{ rent.price }}</td>
+                    <td>{{ getStatusDescription(rent.status) }}</td>
+                    <td>
+                        <button class="btn btn-modificar" (click)="navigateToEditRent(rent._id)">✍🏻</button>
+                        <button class="btn btn-eliminar" (click)="deleteRent(rent._id)">🗑️</button>
+                    </td>
+                </tr>
+                <tr>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>

@@ -1,0 +1,48 @@
+<h2>Modificar Usuario </h2>
+
+<div class="edit-user-container">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" formControlName="name" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="surname">Apellidos</label>
+            <input type="text" id="surname" formControlName="surname" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="license">Licencia</label>
+            <input type="text" id="license" formControlName="license" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="dob">Validez</label>
+            <input type="text" id="dob" formControlName="dob" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="address">Dirección</label>
+            <input type="string" id="address" formControlName="address" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="email">email</label>
+            <input type="string" id="email" formControlName="email" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Teléfono</label>
+            <input type="text" id="phone" formControlName="phone" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="role">Role</label>
+            <input type="string" id="role" formControlName="role" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!userForm.valid" (click)="onSubmit()">Modificar
+            Usuario</button>
+    </form>
+</div>

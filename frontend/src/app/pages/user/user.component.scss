@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-top: 30px;
+  
+    h2 {
+      font-size: 24px;
+      color: #343a40;
+      margin-bottom: 30px;
+    }
+  
+    app-users,
+    app-form-rental-user {
+      width: 100%; // Ensures consistency in width
+      max-width: 600px; // Matches the container max-width for form
+      display: block; // Makes sure the components are properly block-level
+      margin-bottom: 20px; // Provides spacing between components
+  
+      &:last-child {
+        margin-bottom: 0; // Removes bottom margin for the last component
+      }
+    }
+  }
+  
+  // General container style adjustments for consistency
+  .container, .contenedor {
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    max-width: 600px; // Centralized max-width for consistency
+    margin: 20px auto; // Auto margins for horizontal centering
+    padding: 20px;
+  }
+  
+  // Responsive design adjustments
+  @media (max-width: 768px) {
+    .contenedor, .container {
+      padding: 15px;
+      margin: 10px;
+  
+      h2 {
+        font-size: 20px; // Smaller title on smaller screens
+        margin-bottom: 20px; // Less space on mobile
+      }
+  
+      app-users,
+      app-form-rental-user {
+        margin-bottom: 15px;
+      }
+    }
+  }
+  

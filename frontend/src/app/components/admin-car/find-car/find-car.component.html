@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="action-container">
+        <button class="add-car btn btn-primary" (click)="navigateToAddCar()" >Añadir coche</button>
+    </div>
+    <div class="search-bar">
+        <input type="text" [formControl]="searchControl" placeholder="Buscar coche">
+    </div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>id</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Placa</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (car of (filteredCars.length > 0 ? filteredCars : cars); track car._id){
+                <tr>
+                    <td>{{ car._id }}</td>
+                    <td>{{ car.make }}</td>
+                    <td>{{ car.model }}</td>
+                    <td>{{ car.plate }}</td>
+                    <td>
+                        <button class="btn btn-modificar" (click)="navigateToEditCar(car._id)">✍🏻</button>
+                        <button class="btn btn-eliminar" (click)="deleteCar(car._id)">🗑️</button>
+                    </td>
+                </tr>
+                <tr>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>

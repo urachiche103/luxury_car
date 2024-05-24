@@ -1,0 +1,68 @@
+.container {
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 960px; // Wider container for multiple cards
+    overflow-x: auto; // Enables horizontal scrolling
+    
+    h2 {
+      color: #343a40;
+      margin-bottom: 20px;
+      font-size: 24px;
+      text-align: center; // Center the title for better focus
+    }
+  
+    .card-group {
+      display: flex;
+      flex-direction: row; // Ensures cards are in a row
+      align-items: start; // Aligns items to the start of the container vertically
+      overflow-x: auto; // Ensures the ability to scroll horizontally
+      white-space: nowrap; // Prevents wrapping of items
+      gap: 20px; // Provides space between cards
+      flex-wrap: nowrap;
+
+      .card {
+        min-width: 18rem; // Sets a minimum width for each card
+        background-color: #fff;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        flex: 0 0 auto; // Ensures that the card does not grow or shrink
+
+        .card-body {
+          padding: 15px;
+  
+          .card-title {
+            color: #007bff; // Theme color for titles
+            font-size: 18px;
+          }
+  
+          .card-subtitle {
+            color: #6c757d; // Muted for model info
+            font-size: 14px;
+          }
+  
+          .card-text {
+            font-size: 14px;
+            margin-bottom: 8px;
+  
+            &:last-child {
+              margin-bottom: 0; // Remove bottom margin on the last element
+            }
+          }
+        }
+      }
+    }
+}
+
+// Responsive adjustments for smaller screens
+@media (max-width: 768px) {
+  .container {
+    .card-group {
+      justify-content: flex-start; // Aligns cards to the start
+      gap: 10px; // Smaller gap on smaller screens
+    }
+  }
+}

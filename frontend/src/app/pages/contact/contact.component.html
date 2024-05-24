@@ -1,0 +1,38 @@
+
+<form class="container form-space " [formGroup]="contactForm" >
+    <div class="row justify-content-center"> 
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">Contacto</div>
+                <div class="card-body">
+                            <div class="mb-3"> 
+                                <label class="form-label" for="">Nombre:</label>
+                                <input type="text" formControlName="name" placeholder="Nombre" class="form-control container">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="">Apellido: </label>
+                                <input type="text" formControlName="surname" name="" id="" placeholder="Apellido" class="form-control container">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="">Email: </label>
+                                <input class="" formControlName="email" type="text" placeholder="Correo" class="form-control container">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for=""> Teléfono: </label>
+                                <input type="number" formControlName="phone" class="form-control container">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="">Mensaje :</label>
+                                <textarea name="" id="" cols="30" rows="5" formControlName="mensaje" class="form-control container"></textarea>
+                            </div>
+                            <button class="btn btn-primary" (click)="deleteForm()" >Enviar</button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</form>
+
+

@@ -1,0 +1,10 @@
+<div class="card">
+    <img src= "{{car?.picture}}" alt="car-image" class="card-img-top">
+    <hr>
+    <div class="card-body">
+        <h5 class="card-title">{{car?.make}}</h5>
+        <p class="card-text">{{car?.model}} </p>
+        <p class="card-text">Detalles: Year: {{car?.year}}, CV: {{car?.hp}}, Tranmisión: {{car?.transmission}}</p>
+        <button class="btn btn-primary" (click)="navigateToCar(car?._id)">Ver Coche</button>
+    </div>
+</div> 

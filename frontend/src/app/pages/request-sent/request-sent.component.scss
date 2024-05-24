@@ -1,0 +1,39 @@
+.request-sent-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+    background: #f0f2f5;
+    color: #333;
+
+    h1 {
+        font-size: 2rem;
+        color: #4CAF50; // A green color to indicate success
+    }
+
+    p {
+        font-size: 1.2rem;
+        margin-top: 20px;
+        max-width: 600px;
+        color: #555; // Slightly darker text for the paragraph
+    }
+
+    button {
+        padding: 10px 20px;
+        margin-top: 30px;
+        font-size: 1rem;
+        background-color: #007BFF; // Bright blue to stand out
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: darken(#007bff, 10%);
+        }
+    }
+}

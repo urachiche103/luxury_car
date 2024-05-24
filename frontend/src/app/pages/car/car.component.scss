@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-direction: column; // Stack vertically by default
+  padding: 20px;
+
+  @media (min-width: 768px) { // Adjust based on your specific breakpoint needs
+      flex-direction: row; // Side by side on larger screens
+  }
+
+  .component-a,
+  .component-b {
+      flex: 1; // Each component takes equal width
+      padding: 10px; // Add padding for some space around the content
+  }
+}

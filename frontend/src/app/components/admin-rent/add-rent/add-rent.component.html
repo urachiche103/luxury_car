@@ -1,0 +1,51 @@
+<h2>Crear Renta</h2>
+
+<div class="add-rent-container">
+    <form [formGroup]="rentForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="car">Coche</label>
+        <select id="car" formControlName="car" class="form-control">
+            @for (car of cars; track car._id){
+            <option value="{{car._id}}" >
+                 {{car.make}} - {{car.model}}
+                </option>
+                            }
+                    </select>
+      </div>
+
+      <div class="form-group">
+        <label for="user">Cliente</label>
+        <select id="user" formControlName="user" class="form-control">
+            @for (user of users; track user._id) {
+                <option value="{{user._id}}">
+                    {{user.surname}}, {{user.name}}
+                </option>
+            }
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="dateIn">Fecha Inicio</label>
+        <input type="date" id="dateIn" formControlName="dateIn" class="form-control">
+      </div>
+      
+      <div class="form-group">
+        <label for="dateOut">Fecha Final</label>
+        <input type="date" id="dateOut" formControlName="dateOut" class="form-control">
+      </div>
+      
+
+      
+      <div class="form-group">
+        <label for="price">Precio</label>
+        <input type="number" id="price" formControlName="price" class="form-control">
+      </div>
+      
+      <div class="form-group">
+        <label for="status">Estado</label>
+        <select id="status" formControlName="status" class="form-control">
+            <option value="1">Reservado</option>
+            <option value="2">Rentado</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!rentForm.valid">Crear Renta</button>

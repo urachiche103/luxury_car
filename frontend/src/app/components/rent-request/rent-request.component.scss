@@ -1,0 +1,71 @@
+.rent-form-container {
+    max-width: 600px; // Limits the width on larger screens for better aesthetics
+    margin: 20px auto; // Centers the form and provides some spacing from other content
+    padding: 20px;
+    background-color: #f8f9fa; // A light background to contrast against a potentially darker page theme
+    border-radius: 10px; // Smooth corners for a modern look
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); // Subtle shadow for depth
+  
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px; // Provides consistent spacing between form elements
+  
+      .form-group {
+        display: flex;
+        flex-direction: column;
+  
+        label {
+          font-size: 1rem; // Responsive font size
+          color: #333; // Dark color for readability
+          margin-bottom: 5px; // Space between label and input
+        }
+  
+        input[type="date"],
+        input[type="text"] {
+          padding: 10px;
+          font-size: 1rem; // Ensures readability on all devices
+          border: 1px solid #ccc; // Subtle border styling
+          border-radius: 5px; // Matches the form container border-radius
+          &:focus {
+            outline: none;
+            border-color: #0056b3; // Highlight color when input is focused
+            box-shadow: 0 0 0 2px rgba(0, 86, 179, 0.2); // A subtle blue glow
+          }
+        }
+      }
+  
+      .btn-primary {
+        padding: 10px 15px;
+        font-size: 1.1rem;
+        color: #fff;
+        background-color: #0056b3; // Primary button color
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+  
+        &:hover {
+          background-color: darken(#0056b3, 10%);
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .rent-form-container {
+      padding: 15px;
+      form {
+        .form-group {
+          label {
+            font-size: 0.9rem;
+          }
+          input[type="date"],
+          input[type="text"] {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+  

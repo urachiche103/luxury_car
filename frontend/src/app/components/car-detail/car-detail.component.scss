@@ -1,0 +1,87 @@
+$primary-color: #343a40; // Dark grey for a sleek look
+$secondary-color: #f8f9fa; // Light grey for background
+$accent-color: #014d88; // Gold for accents and CTA
+
+.card {
+  background: $secondary-color;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  img {
+    width: 100%;
+    height: auto; // Fixed height for consistency
+    object-fit: contain;
+    margin: auto;
+    display: block;
+  }
+
+  .card-body {
+    padding: 20px;
+    color: $primary-color;
+    text-align: center;
+
+    .card-title {
+      font-size: 2.5rem; // Larger font for model and make
+      font-weight: 600;
+      margin-top: 0;
+    }
+
+      p {
+        display: inline-block; // Makes paragraphs inline
+        font-size: 0.9rem; // Smaller font for details
+        line-height: 1.4;
+        margin: 0 10px 10px; // Spacing around paragraphs
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      .card-text {
+        display: block; // Ensures description is on its own line
+        margin-top: 10px;
+        font-size: 1rem;
+        color: darken($primary-color, 20%);
+      }
+
+      .rent-button {
+        font-size: 1rem;
+        padding: 10px 25px;
+        background-color: $accent-color;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        display: block; // Makes button a block element
+        margin: 20px auto 0; // Centers the button
+
+        &:hover {
+          background-color: darken($accent-color, 10%);
+        }
+      }
+    }
+  }
+
+  // Responsive design adjustments
+  @media (max-width: 768px) {
+    .card {
+      img {
+        height: 150px;
+      }
+      .card-body {
+        padding: 15px;
+      }
+      .card-body p {
+        display: inline-block; // Stacks paragraphs vertically on smaller screens
+        margin-right: 0;
+      }
+    }
+  }
+

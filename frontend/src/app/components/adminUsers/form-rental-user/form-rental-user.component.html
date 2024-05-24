@@ -1,0 +1,18 @@
+<div class="container">
+    <h2>Historial de Alquileres</h2>
+    <div class="card-group">
+      @for (rent of rents; track rent._id){
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{rent.car.make}}</h5>
+            <p class="card-subtitle mb-2 text-muted">{{rent.car.model}}</p>
+            <p class="card-text"><strong>Fecha de alquiler:</strong> {{rent.dateIn}}</p>
+            <p class="card-text"><strong>Devolución:</strong> {{rent.dateOut}}</p>
+            <p class="card-text"><strong>Precio:</strong> {{rent.price}}€</p>
+            <p class="card-text"><strong>Estado:</strong> {{getStatusDescription(rent.status)}}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+  

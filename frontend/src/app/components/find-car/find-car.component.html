@@ -1,0 +1,47 @@
+<form [formGroup]="searcherCars" (ngSubmit)="searcherCar()" >
+    <div class="input-group space">
+        <input type="text" placeholder="Buscar..." formControlName="car" class="form-control">
+        <button type="submit" class="btn btn-primary" >Buscar</button>
+    </div>
+    <div class="row justify-content-around space">
+        
+        <div class="col col-md-3">
+            <label id="">Selecciona por Potencia</label>
+            <select class="form-select" name="" id="" formControlName="power" (click)="searcherCar()" >
+                <option value="">-Seleccionar-</option>
+                <option value="descendant">De mayor a menor</option>
+                <option value="ascendant">De menor a mayor</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label> Selecciona por Año</label>
+            <select class="form-select" name="" id="" formControlName="year" (click)="searcherCar()">
+                <option value="">-Seleccionar-</option>
+                <option value="newerFirst">Los mas nuevos primero</option>
+                <option value="olderFirst">Los mas antiguos primero</option> 
+            </select>
+        </div>
+        <div class=" col col-md-3">
+            <label>Selecciona por transmisión</label>
+                <select class="form-select" name="" id="" formControlName="transmission" (click)="searcherCar()" >
+                    <option value="" >-Selecionar-</option>
+                    <option value="Automatico" >Automático</option>
+                    <option value="Manual">Manual</option>
+                </select>
+        </div>
+    </div>
+    
+    
+</form>
+<div class="row  justify-content-around margin">
+    <div class="row ">
+        @for (car of (carsFiltered.length > 0 ? carsFiltered : cars); track car._id){
+            
+                        <app-card [car]="car" class="col-md-6 space" ></app-card>
+        }
+    </div>
+</div>
+    
+
+
+    

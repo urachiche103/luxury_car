@@ -1,0 +1,13 @@
+<div class="container">
+    <form class="titleInputAndButtonUsers" [formGroup]="eraserUser" (ngSubmit)="deleteUser()">
+        <div class="form-group">
+            <label for="userId">Introducir "id" del usuario a borrar</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="userId" formControlName="id" placeholder="Introduzca ID">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-danger" [disabled]="!eraserUser.value">Borrar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

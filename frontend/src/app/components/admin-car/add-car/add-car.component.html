@@ -1,0 +1,62 @@
+<h2>Añade un coche al inventario</h2>
+<div class="create-car-container">
+    <h2>Añadir nuevo coche</h2>
+    <form [formGroup]="carForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="make">Marca</label>
+            <input type="text" id="make" formControlName="make" class="form-control">
+          </div>
+          
+          <div class="form-group">
+            <label for="model">Modelo</label>
+            <input type="text" id="model" formControlName="model" class="form-control">
+          </div>
+          
+          <div class="form-group">
+            <label for="plate">Placa</label>
+            <input type="text" id="plate" formControlName="plate" class="form-control">
+          </div>
+          
+          <div class="form-group">
+            <label for="year">Año</label>
+            <input type="number" id="year" formControlName="year" class="form-control">
+          </div>
+          
+          <div class="form-group">
+            <label for="hp">Caballos de Fuerza</label>
+            <input type="number" id="hp" formControlName="hp" class="form-control">
+          </div>
+          
+          <div class="form-group">
+            <label for="cc">Cilindrada (cc)</label>
+            <input type="text" id="cc" formControlName="cc" class="form-control">
+          </div>
+          
+          <div class="form-group">
+            <label for="colour">Color</label>
+            <input type="text" id="colour" formControlName="colour" class="form-control">
+          </div>
+          
+          <div class="form-group">
+            <label for="seats">Asientos</label>
+            <input type="number" id="seats" formControlName="seats" class="form-control">
+          </div>
+          
+          <div class="form-group">
+            <label for="price">Precio</label>
+            <input type="number" id="price" formControlName="price" class="form-control">
+          </div>
+          
+          <div class="form-group">
+            <label for="transmission">Transmisión</label>
+            <input type="text" id="transmission" formControlName="transmission" class="form-control">
+          </div>
+          
+          <div class="form-group">
+            <label for="description">Descripción</label>
+            <textarea id="description" formControlName="description" class="form-control" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="!carForm.valid" >Añadir Coche</button>
+    </form>
+  </div>
+  

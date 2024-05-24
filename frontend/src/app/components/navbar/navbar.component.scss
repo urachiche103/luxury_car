@@ -1,0 +1,72 @@
+.navbar {
+    background-color: #f8f9fa; // Light background color for a clean look
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+    padding: 0.5rem 1rem; // Uniform padding for better spacing
+  
+    .container-fluid {
+      display: flex;
+      justify-content: space-between; // Ensures space between brand and navigation
+      align-items: center;
+  
+      .navbar-brand {
+        color: #000000; // Brand color for emphasis
+        font-size: 1.5rem; // Larger font size for visibility
+        font-weight: bold; // Bold for prominence
+        margin-right: 1rem; // Margin to separate from nav items
+      }
+  
+      .navbar-toggler {
+        border: none;
+        &:focus {
+          outline: none; // Removes focus outline for cleaner look
+        }
+      }
+  
+      .navbar-nav {
+        display: flex;
+        align-items: center;
+  
+        &.mr-auto { // Left aligned items
+          margin-right: auto;
+        }
+  
+        &.ml-auto { // Right aligned items
+          margin-left: auto;
+        }
+  
+        .nav-item {
+          margin-right: 0.75rem; // Space between items
+  
+          .nav-link {
+            color: #343a40; // Dark grey for contrast
+            &:hover, &:focus {
+              color: #0056b3; // Highlight color on hover/focus
+            }
+          }
+  
+          .btn {
+            padding: 0.25rem 0.5rem; // Smaller padding for button to fit in navbar
+          }
+        }
+      }
+    }
+  }
+  
+  // Responsive adjustments for better navigation on mobile devices
+  @media (max-width: 992px) {
+    .navbar {
+      .container-fluid {
+        flex-wrap: wrap;
+  
+        .navbar-nav {
+          width: 100%; // Full width for better mobile usability
+  
+          &.ml-auto {
+            justify-content: flex-start; // Align items to the start on mobile
+            margin-top: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,110 @@
+<form action="" [formGroup]="registerForm" (ngSubmit)="doRegister()" class="container space">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">Registro</div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label" for="name">Nombre:</label>
+                        <input type="text" class="form-control" formControlName= "name">
+                        @if(registerForm.get('name')?.touched && registerForm.get('name')?.errors){
+                            @if(registerForm.get('name')?.errors!["required"]){
+                                <small>Este campo es obligatorio</small>
+                            }@if(registerForm.get('name')?.errors!["pattern"]) {
+                                <small>El nombre no debe contener Números</small>
+                            }
+                        }
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="surname">Apellido: </label>
+                        <input type="text" name="" id=""class="form-control container" formControlName="surname" >
+                        @if(registerForm.get('surname')?.touched && registerForm.get('surname')?.errors){
+                            @if(registerForm.get('surname')?.errors!["required"]){
+                                <small>Este campo es obligatorio</small>
+                            }@if(registerForm.get('surname')?.errors!["pattern"]) {
+                                <small>El apellido no debe contener Números</small>
+                            }
+                        }
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label" for="email">Email:</label>
+                        <input type="text" class="form-control form-space" formControlName="email">
+                        @if(registerForm.get('name')?.touched && registerForm.get('email')?.errors){
+                            @if(registerForm.get('email')?.errors!["required"]){
+                                <small>Este campo es obligatorio</small>
+                            }@if(registerForm.get('email')?.errors!["pattern"]) {
+                                <small>Formato de email incorrecto</small>
+                            }
+                        }
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="password">Password:</label>
+                        <input type="text" class="form-control form-space" formControlName="password">
+                        @if(registerForm.get('password')?.touched && registerForm.get('password')?.errors){
+                            @if(registerForm.get('password')?.errors!["required"]){
+                                <small>Este campo es obligatorio</small>
+                            }@if(registerForm.get('password')?.errors!["pattern"]) {
+                                <small>Formato de contraseña incorrecto, debe contener Mayusculas, mínusculas , numeros y al menos 7 carácteres</small>
+                            }
+                        }
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="address">Dirección:</label>
+                        <input type="text" class="form-control form-space" formControlName="address">
+                        @if(registerForm.get('address')?.touched && registerForm.get('address')?.errors){
+                            @if(registerForm.get('address')?.errors!["required"]){
+                                <small>Este campo es obligatorio</small>
+                            }
+                        }
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="phone">Teléfono: </label>
+                        <input type="text" class="form-control form-space" formControlName="phone" maxlength="9">
+                        @if(registerForm.get('phone')?.touched && registerForm.get('phonw')?.errors){
+                            @if(registerForm.get('phone')?.errors!["required"]){
+                                <small>Este campo es obligatorio</small>
+                            }
+                        }
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="license">Dni: </label>
+                        <input type="text" class="form-control form-space" formControlName="license" maxlength="10">
+                        @if(registerForm.get('license')?.touched && registerForm.get('license')?.errors){
+                            @if(registerForm.get('license')?.errors!["required"]){
+                                <small>Este campo es obligatorio</small>
+                            }
+                        }
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="dob" >Carnet de conducir*</label>
+                        <input type="text" class="form-control form-space" formControlName="dob" placeholder="YYYY/MM/DD">
+                        @if(registerForm.get('dob')?.touched && registerForm.get('dob')?.errors){
+                            @if(registerForm.get('dob')?.errors!["required"]){
+                                <small>Este campo es obligatorio</small>
+                            }@if(registerForm.get('dob')?.errors!["pattern"]) {
+                                <small>Formato de fecha incorrecto</small>
+                            }
+                        }
+                        
+                        
+                    </div>
+                    <div class="form-check check" >
+                        <input type="checkbox" required>
+                        <label class="form-check-label" >Terminos y condiciones </label>
+                    </div>
+            
+                    <button formControlName="checkbox" class="btn btn-primary">Registrarse</button>
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        
+        
+   
+    
+</form>

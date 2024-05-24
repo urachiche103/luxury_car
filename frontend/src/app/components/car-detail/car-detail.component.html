@@ -1,0 +1,14 @@
+<div class="card">
+    <img src="{{ car?.picture }}" alt="car-image">
+    <div class="card-body">
+        <h5 class="card-title">{{ car?.make }}</h5>
+        <h5 class="card-title">{{ car?.model }}</h5>
+        <i class="fa fa-car"></i><p> <strong> Año: </strong>{{ car?.year }}</p>
+        <i class="fa-solid fa-bolt-lightning"></i> <p><strong> HP: </strong>{{ car?.hp }}</p>
+        <i class="fa-solid fa-engine"></i><p><strong> CC: </strong>{{ car?.cc }}</p>
+        <i class="fa fa-users "></i><p><strong> Asientos: </strong>{{ car?.seats }}</p>
+        <i class="fa fa-code-fork"></i><p><strong> Transmisión: </strong>{{ car?.transmission }}</p>
+        <i class="fa fa-code-fork"></i><p><strong> Precio: </strong>{{ car?.price }}</p>
+        <p class="card-text">{{ car?.description }}</p>
+    </div>
+</div>

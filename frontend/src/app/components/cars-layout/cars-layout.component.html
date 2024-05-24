@@ -1,0 +1,19 @@
+<p>Hola</p>
+
+<div class="container">
+    @if(cars.length){
+        @for (car of cars; track car._id) {
+            <div class="card">
+                <img src= "{{car.picture}}" alt="car-image" class="card-img-top ">
+                <div class="card-body">
+                    <h5 class="card-title">{{car.model}}</h5>
+                    <p class="card-text">{{car.make}} </p>
+                    <p class="card-text">Detalles:{{car.year}},{{car.make}},{{car.model}},{{car.hp}},{{car.cc}}.{{car.transmission}}</p>
+                    <a href="/car" class="btn btn-primary">Ver Coche</a>
+                </div>
+            </div> 
+            
+        }
+    }
+
+</div>

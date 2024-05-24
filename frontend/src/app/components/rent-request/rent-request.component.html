@@ -1,0 +1,15 @@
+<div class="rent-form-container">
+    <form [formGroup]="rentForm" (ngSubmit)="submitRentRequest()">
+            
+            <div class="form-group">
+                <label for="dateIn">Fecha Inicio:</label>
+                <input type="date" formControlName="dateIn" id="dateIn" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="dateOut">Fecha Final:</label>
+                <input type="date" formControlName="dateOut" id="dateOut" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Solicitar Reserva</button>
+        </form>
+  </div>
